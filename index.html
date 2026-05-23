@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>qwerty</title>
-    <link rel="stylesheet" href="css/index.css">
+    <title>Экскурсия "От Ломоносова до Кронверкского"</title>
+    
+    <!-- Подключение стилей напрямую из вашего Яндекс.Диска -->
+    <link rel="stylesheet" href="https://getfile.dokpub.com/yandex/get/https://disk.360.yandex.ru/i/TQIRx8al7gNNAQ">
 </head>
 <body>
 
+    <!-- Шапка страницы -->
     <header>
         <div class="container">
             <h1>Экскурсия “От Ломоносова до Кронверского”</h1>
-            <div class="wave-divider">   </div>
+            <div class="wave-divider">~~~~~~~~</div>
             <p>Путь сквозь века: от улицы Ломоносова до Кронверкского проспекта через историческое сердце города.</p>
         </div>
     </header>
@@ -19,71 +22,75 @@
     <div class="container">
         <div class="content-grid">
             
-
+            <!-- Интерактивная карта Google Maps -->
             <section class="map-container">
                 <iframe src="https://www.google.com/maps/d/embed?mid=1oAtdadU5UYcWlBfUVZkDIhF2QjbYnNc&ehbc=2E312F" width="100%" height="400"></iframe>
             </section>
 
-
+            <!-- Аудиогид по маршруту (Потоковое вещание из Яндекс.Диска) -->
             <section class="audio-container">
                 <div>
                     <h3 class="timeline-title">Аудиогид по маршруту</h3>
                     
-
                     <audio id="audio-player" controls>
-                        <source id="audio-source" src="mp3/Вступление_01.mp3" type="audio/mp3">
+                        <source id="audio-source" src="https://getfile.dokpub.com/yandex/get/https://disk.360.yandex.ru/d/blJCYhwTTCTlNw" type="audio/mpeg">
                         Ваш браузер не поддерживает воспроизведение аудио.
                     </audio>
 
                     <ul class="timeline-list">
                         <li class="timeline-item">
-                            <button class="time-link active" onclick="playTrack('mp3/Вступление_01.mp3', this)">01</button>
+                            <button class="time-link active" onclick="playTrack('https://getfile.dokpub.com/yandex/get/https://disk.360.yandex.ru/d/blJCYhwTTCTlNw', this)">01</button>
                             <span>Введение и начало маршрута</span>
                         </li>
 
                         <li class="timeline-item">
-                            <button class="time-link" onclick="playTrack('mp3/Кронверский.mp3', this)">02</button>
-                            <span>Кронверский, 49а</span>
+                            <button class="time-link" onclick="playTrack('https://getfile.dokpub.com/yandex/get/https://disk.360.yandex.ru/d/MqcBi0hDbbGXFg', this)">02</button>
+                            <span>Кронверкский, 49а</span>
                         </li>
 
                         <li class="timeline-item">
-                            <button class="time-link" onclick="playTrack('mp3/Петропавловская крепость_01.mp3', this)">03</button>
+                            <button class="time-link" onclick="playTrack('https://getfile.dokpub.com/yandex/get/https://disk.360.yandex.ru/d/xaivFzgRH83rGw', this)">03</button>
                             <span>Петропавловская крепость</span>
                         </li>
 
                         <li class="timeline-item">
-                            <button class="time-link" onclick="playTrack('mp3/Ростралльные колонны_01.mp3', this)">04</button>
+                            <button class="time-link" onclick="playTrack('https://getfile.dokpub.com/yandex/get/https://disk.360.yandex.ru/d/UGVGVWj0-3rjzw', this)">04</button>
                             <span>Ростральные колонны, стрелка Васильевского острова</span>
                         </li>
 
                         <li class="timeline-item">
-                            <button class="time-link" onclick="playTrack('mp3/Кунсткамера_01.mp3', this)">05</button>
+                            <button class="time-link" onclick="playTrack('https://getfile.dokpub.com/yandex/get/https://disk.360.yandex.ru/d/DfzakQoeucSYng', this)">05</button>
                             <span>Кунсткамера</span>
                         </li>
 
                         <li class="timeline-item">
-                            <button class="time-link" onclick="playTrack('mp3/Эрмитаж_01.mp3', this)">06</button>
+                            <button class="time-link" onclick="playTrack('https://getfile.dokpub.com/yandex/get/https://disk.360.yandex.ru/d/wkP9buo55SsR8g', this)">06</button>
                             <span>Эрмитаж</span>
                         </li>
 
                         <li class="timeline-item">
-                            <button class="time-link" onclick="playTrack('mp3/Дворцовая площадь_01.mp3', this)">07</button>
+                            <button class="time-link" onclick="playTrack('https://getfile.dokpub.com/yandex/get/https://disk.360.yandex.ru/d/5BHlifl63IVRWA', this)">07</button>
                             <span>Дворцовая площадь, Александровская колонна</span>
                         </li>
 
                         <li class="timeline-item">
-                            <button class="time-link" onclick="playTrack('mp3/Дом Зингер_01.mp3', this)">08</button>
+                            <button class="time-link" onclick="playTrack('https://getfile.dokpub.com/yandex/get/https://disk.360.yandex.ru/d/ZCZpJ7ctjJIXtA', this)">08</button>
                             <span>Дом Зингер</span>
                         </li>
 
                         <li class="timeline-item">
-                            <button class="time-link" onclick="playTrack('mp3/Казанский собор_01.mp3', this)">09</button>
+                            <button class="time-link" onclick="playTrack('https://getfile.dokpub.com/yandex/get/https://disk.360.yandex.ru/d/9iCtDBT7JLas6g', this)">09</button>
                             <span>Казанский собор</span>
                         </li>
 
                         <li class="timeline-item">
-                            <button class="time-link" onclick="playTrack('mp3/Ломоносова9_01.mp3', this)">10</button>
+                            <button class="time-link" onclick="playTrack('https://getfile.dokpub.com/yandex/get/https://disk.360.yandex.ru/d/ja26uyQdSq-dmQ', this)">10</button>
                             <span>Ломоносова, 9</span>
+                        </li>
+
+                        <li class="timeline-item">
+                            <button class="time-link" onclick="playTrack('https://getfile.dokpub.com/yandex/get/https://disk.360.yandex.ru/d/5ORH-cGNHg3k3g', this)">11</button>
+                            <span>Заключение экскурсии</span>
                         </li>
                     </ul>
                 </div>
@@ -91,10 +98,12 @@
 
         </div>
 
-<section class="landmarks-section">
+        <!-- Раздел с карточками точек маршрута (Картинки остаются на GitHub для быстрой загрузки) -->
+        <section class="landmarks-section">
             <h2>Точки маршрута</h2>
             <div class="landmarks-grid">
 
+                <!-- 1 -->
                 <article class="landmark-card">
                     <img src="img/ITMO_University's_main_building,_August_2016.jpg" alt="Кронверский, 49а">
                     <div class="landmark-card-content">
@@ -103,6 +112,7 @@
                     </div>
                 </article>
 
+                <!-- 2 -->
                 <article class="landmark-card">
                     <img src="img/petropavl-main-e1596915227647-1536x937.jpg" alt="Петропавловская крепость">
                     <div class="landmark-card-content">
@@ -111,6 +121,7 @@
                     </div>
                 </article>
 
+                <!-- 3 -->
                 <article class="landmark-card">
                     <img src="img/7ee628d9fce77bdc094ca226314439a9.jpg" alt="Ростральные колонны">
                     <div class="landmark-card-content">
@@ -119,6 +130,7 @@
                     </div>
                 </article>
 
+                <!-- 4 -->
                 <article class="landmark-card">
                     <img src="img/img_5cdb340119dc0.png" alt="Кунсткамера">
                     <div class="landmark-card-content">
@@ -127,6 +139,7 @@
                     </div>
                 </article>
 
+                <!-- 5 -->
                 <article class="landmark-card">
                     <img src="img/ermitag1-1536x762.jpg" alt="Эрмитаж">
                     <div class="landmark-card-content">
@@ -135,6 +148,7 @@
                     </div>
                 </article>
 
+                <!-- 6 -->
                 <article class="landmark-card">
                     <img src="img/5624382538.jpg" alt="Дворцовая площадь, Александровская колонна">
                     <div class="landmark-card-content">
@@ -143,6 +157,7 @@
                     </div>
                 </article>
 
+                <!-- 7 -->
                 <article class="landmark-card">
                     <img src="img/Singer_House_SPB_01.jpg" alt="Дом Зингер">
                     <div class="landmark-card-content">
@@ -151,6 +166,7 @@
                     </div>
                 </article>
 
+                <!-- 8 -->
                 <article class="landmark-card">
                     <img src="img/Kazan-cathedral-50001.jpg" alt="Казанский собор">
                     <div class="landmark-card-content">
@@ -159,6 +175,7 @@
                     </div>
                 </article>
 
+                <!-- 9 -->
                 <article class="landmark-card">
                     <img src="img/p8272.jpg" alt="Ломоносова, 9">
                     <div class="landmark-card-content">
@@ -171,11 +188,11 @@
         </section>
     </div>
 
-
+    <!-- Раздел авторов проекта -->
     <footer id="authors">
         <div class="container">
             <h2 class="authors-title">Над проектом работали</h2>
-            <div class="wave-divider"></div>
+            <div class="wave-divider">~~~~~~~~</div>
             
             <div class="authors-grid">
                 <div class="author-item">
@@ -186,42 +203,34 @@
                     <span class="author-name">Аверьянова Ксения Денисовна</span>
                     <span class="author-id">502805</span>
                 </div>
-
                 <div class="author-item">
                     <span class="author-name">Аргунова Арина Ринатовна</span>
                     <span class="author-id">465039</span>
                 </div>
-
                 <div class="author-item">
                     <span class="author-name">Олесина Мария Александровна</span>
                     <span class="author-id">502361</span>
                 </div>
-
                 <div class="author-item">
                     <span class="author-name">Корсунский Максим Константинович</span>
                     <span class="author-id">466297</span>
                 </div>
-
                 <div class="author-item">
                     <span class="author-name">Провоторов Арсений Игоревич</span>
                     <span class="author-id">467181</span>
                 </div>
-
                 <div class="author-item">
                     <span class="author-name">Абаянцева Евгения Юрьевна</span>
                     <span class="author-id">327004</span>
                 </div>
-
                 <div class="author-item">
                     <span class="author-name">Розыкулыев Дидар</span>
                     <span class="author-id">511489</span>
                 </div>
-
                 <div class="author-item">
                     <span class="author-name">Гращенков Арсений Дмитриевич</span>
                     <span class="author-id">501571</span>
                 </div>
-
                 <div class="author-item">
                     <span class="author-name">Белкин Святослав Викторович</span>
                     <span class="author-id">465184</span>
@@ -232,28 +241,21 @@
         </div>
     </footer>
 
+    <!-- Скрипт переключения треков -->
     <script>
         function playTrack(audioPath, buttonElement) {
             const player = document.getElementById('audio-player');
             const source = document.getElementById('audio-source');
             
-
             source.src = audioPath;
-            
-
             player.load();
-            
-
             player.play();
             
-
             const buttons = document.querySelectorAll('.time-link');
             buttons.forEach(btn => btn.classList.remove('active'));
             
-
             buttonElement.classList.add('active');
         }
     </script>
 </body>
 </html>
-

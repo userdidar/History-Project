@@ -5,15 +5,289 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Экскурсия "От Ломоносова до Кронверкского"</title>
     
-    <!-- Подключение стилей напрямую из вашего Яндекс.Диска -->
-    <link rel="stylesheet" href="https://getfile.dokpub.com/yandex/get/https://disk.360.yandex.ru/i/TQIRx8al7gNNAQ">
+    <!-- Встроенные стили для 100% гарантии работы оформления -->
+    <style>
+        /* Базовые настройки страницы */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, #cbebe0 0%, #f0faf6 55%, #ffffff 100%);
+            background-attachment: fixed;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #1a1a1a;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Шапка с названием экскурсии */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            font-family: "Georgia", serif;
+            font-size: 3.5em;
+            font-weight: normal;
+            margin: 0 0 10px 0;
+            color: #1a1a1a;
+        }
+
+        /* Волнистый разделитель */
+        .wave-divider {
+            font-size: 2em;
+            letter-spacing: -3px;
+            margin: 15px 0;
+            user-select: none;
+            color: #009A63; /* Цвет зеленого трилистника */
+        }
+
+        header p {
+            font-family: "Georgia", serif;
+            font-size: 1.15em;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Сетка для карты и аудиогида */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
+        }
+
+        /* Контейнеры карты и аудио */
+        .map-container, .audio-container {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            border: 0;
+            border-radius: 8px;
+            height: 400px;
+        }
+
+        /* Аудиогид */
+        .timeline-title {
+            font-family: "Georgia", serif;
+            font-size: 1.3em;
+            margin-top: 0;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0,0,0,0.07);
+        }
+
+        audio {
+            width: 100%;
+            margin-bottom: 25px;
+        }
+
+        .timeline-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            padding: 4px;
+        }
+
+        /* Кнопки-плашки */
+        .time-link {
+            background: #000000;
+            color: #ffffff;
+            padding: 6px 18px;
+            border-radius: 10px;
+            font-family: Consolas, Monaco, monospace;
+            font-size: 1.05em;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-decoration: none;
+            margin-right: 15px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.25s ease;
+            border: none;
+            min-width: 55px;
+        }
+
+        .time-link:hover {
+            background: #009A63;
+        }
+
+        /* Активная кнопка подсвечивается зеленым */
+        .time-link.active {
+            background: #009A63;
+            box-shadow: 0 0 10px rgba(0, 154, 99, 0.3);
+        }
+
+        .timeline-item span:not(.time-link) {
+            font-size: 0.95em;
+            line-height: 1.4;
+        }
+
+        /* Раздел с карточками */
+        .landmarks-section {
+            margin-top: 60px;
+        }
+
+        .landmarks-section h2 {
+            font-family: "Georgia", serif;
+            font-size: 2em;
+            font-weight: normal;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .landmarks-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .landmarks-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .landmark-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s;
+        }
+
+        .landmark-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .landmark-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .landmark-card-content {
+            padding: 20px;
+        }
+
+        .landmark-card-content h3 {
+            font-family: "Georgia", serif;
+            margin: 0 0 10px 0;
+            font-size: 1.25em;
+            font-weight: normal;
+        }
+
+        .landmark-card-content p {
+            margin: 0;
+            font-size: 0.95em;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        /* Подвал (Авторы) */
+        footer {
+            margin-top: 80px;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .authors-title {
+            font-family: "Georgia", serif;
+            font-size: 2.2em;
+            font-weight: normal;
+            margin: 0 0 10px 0;
+            color: #1a1a1a;
+        }
+
+        .authors-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px 25px;
+            max-width: 900px;
+            margin: 35px auto;
+            text-align: left;
+        }
+
+        @media (min-width: 768px) {
+            .authors-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .author-item {
+            background: rgba(0, 154, 99, 0.03);
+            border-left: 4px solid #009A63;
+            padding: 12px 18px;
+            border-radius: 0 10px 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .author-item:hover {
+            background: rgba(0, 154, 99, 0.07);
+            transform: translateX(3px);
+        }
+
+        .author-name {
+            font-size: 1.02em;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        .author-id {
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.88em;
+            color: #009A63;
+            background: rgba(0, 154, 99, 0.1);
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .copyright {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
 
     <!-- Шапка страницы -->
     <header>
         <div class="container">
-            <h1>Экскурсия “От Ломоносова до Кронверского”</h1>
+            <h1>Экскурсия "От Ломоносова до Кронверкского"</h1>
             <div class="wave-divider">~~~~~~~~</div>
             <p>Путь сквозь века: от улицы Ломоносова до Кронверкского проспекта через историческое сердце города.</p>
         </div>
@@ -24,10 +298,10 @@
             
             <!-- Интерактивная карта Google Maps -->
             <section class="map-container">
-                <iframe src="https://www.google.com/maps/d/embed?mid=1oAtdadU5UYcWlBfUVZkDIhF2QjbYnNc&ehbc=2E312F" width="100%" height="400"></iframe>
+                <iframe src="https://www.google.com/maps/d/embed?mid=1oAtdadU5UYcWlBfUVZkDIhF2QjbYnNc&ehbc=2E312F" width="100%"></iframe>
             </section>
 
-            <!-- Аудиогид по маршруту (Потоковое вещание из Яндекс.Диска) -->
+            <!-- Аудиогид по маршруту -->
             <section class="audio-container">
                 <div>
                     <h3 class="timeline-title">Аудиогид по маршруту</h3>
@@ -98,21 +372,19 @@
 
         </div>
 
-        <!-- Раздел с карточками точек маршрута (Картинки остаются на GitHub для быстрой загрузки) -->
+        <!-- Раздел с карточками точек маршрута -->
         <section class="landmarks-section">
             <h2>Точки маршрута</h2>
             <div class="landmarks-grid">
 
-                <!-- 1 -->
                 <article class="landmark-card">
-                    <img src="img/ITMO_University's_main_building,_August_2016.jpg" alt="Кронверский, 49а">
+                    <img src="img/ITMO_University's_main_building,_August_2016.jpg" alt="Кронверкский, 49а">
                     <div class="landmark-card-content">
-                        <h3>Кронверский, 49а</h3>
+                        <h3>Кронверкский, 49а</h3>
                         <p>Бывший Второй дом городских учреждений, построенный в 1912–1913 годах по проекту М. М. Перетятковича в стиле неоклассицизма. Фасад здания примечателен рустованным цоколем и декоративными букраниями (бычьими черепами). В разные годы здесь находились легальный комитет РСДРП(б) и Биржа труда, а сегодня располагается главный корпус Университета ИТМО.</p>
                     </div>
                 </article>
 
-                <!-- 2 -->
                 <article class="landmark-card">
                     <img src="img/petropavl-main-e1596915227647-1536x937.jpg" alt="Петропавловская крепость">
                     <div class="landmark-card-content">
@@ -121,7 +393,6 @@
                     </div>
                 </article>
 
-                <!-- 3 -->
                 <article class="landmark-card">
                     <img src="img/7ee628d9fce77bdc094ca226314439a9.jpg" alt="Ростральные колонны">
                     <div class="landmark-card-content">
@@ -130,7 +401,6 @@
                     </div>
                 </article>
 
-                <!-- 4 -->
                 <article class="landmark-card">
                     <img src="img/img_5cdb340119dc0.png" alt="Кунсткамера">
                     <div class="landmark-card-content">
@@ -139,7 +409,6 @@
                     </div>
                 </article>
 
-                <!-- 5 -->
                 <article class="landmark-card">
                     <img src="img/ermitag1-1536x762.jpg" alt="Эрмитаж">
                     <div class="landmark-card-content">
@@ -148,7 +417,6 @@
                     </div>
                 </article>
 
-                <!-- 6 -->
                 <article class="landmark-card">
                     <img src="img/5624382538.jpg" alt="Дворцовая площадь, Александровская колонна">
                     <div class="landmark-card-content">
@@ -157,7 +425,6 @@
                     </div>
                 </article>
 
-                <!-- 7 -->
                 <article class="landmark-card">
                     <img src="img/Singer_House_SPB_01.jpg" alt="Дом Зингер">
                     <div class="landmark-card-content">
@@ -166,7 +433,6 @@
                     </div>
                 </article>
 
-                <!-- 8 -->
                 <article class="landmark-card">
                     <img src="img/Kazan-cathedral-50001.jpg" alt="Казанский собор">
                     <div class="landmark-card-content">
@@ -175,7 +441,6 @@
                     </div>
                 </article>
 
-                <!-- 9 -->
                 <article class="landmark-card">
                     <img src="img/p8272.jpg" alt="Ломоносова, 9">
                     <div class="landmark-card-content">
@@ -241,7 +506,7 @@
         </div>
     </footer>
 
-    <!-- Скрипт переключения треков -->
+    <!-- Скрипт воспроизведения аудио -->
     <script>
         function playTrack(audioPath, buttonElement) {
             const player = document.getElementById('audio-player');
